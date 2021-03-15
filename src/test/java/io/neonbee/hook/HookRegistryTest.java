@@ -17,7 +17,7 @@ import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
 
 @ExtendWith(VertxExtension.class)
-public class HookRegistryTest {
+class HookRegistryTest {
     private final String correlID = "correl";
 
     @Test

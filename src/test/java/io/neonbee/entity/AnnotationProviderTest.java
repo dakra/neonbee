@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class AnnotationProviderTest {
+class AnnotationProviderTest {
     private static final String COMMON_BACKEND = "common.backend";
 
     private static final String SCHEMA_NAMEPSACE = "AnyModel.Service";
@@ -40,7 +40,7 @@ public class AnnotationProviderTest {
 
     @Test
     @DisplayName("check if getting annotations by entity works")
-    public void getAnnotationsByEntity() {
+    void getAnnotationsByEntity() {
         List<CsdlAnnotations> productAnnotations =
                 annotationProvider.getAnnotationsByEntity("AnyModel.Service.Products");
         assertThat(productAnnotations).hasSize(3);
@@ -54,7 +54,7 @@ public class AnnotationProviderTest {
 
     @Test
     @DisplayName("check if getting all annotations works")
-    public void getAnnotations() {
+    void getAnnotations() {
         List<CsdlAnnotations> annotations = annotationProvider.getAnnotations();
         assertThat(annotations).hasSize(4);
         assertThat(annotations).containsExactly(QUERY_ANNOTATION, QUERY_ANNOTATION2, FIELD_ANNOTATION,
@@ -63,7 +63,7 @@ public class AnnotationProviderTest {
 
     @Test
     @DisplayName("check if setting and getting latest version works")
-    public void isLatestVersionTest() {
+    void isLatestVersionTest() {
         assertThat(annotationProvider.isLatestVersion()).isTrue();
         annotationProvider.setLatestVersion(false);
         assertThat(annotationProvider.isLatestVersion()).isFalse();
@@ -71,7 +71,7 @@ public class AnnotationProviderTest {
 
     @Test
     @DisplayName("check if getting entity names works")
-    public void getEntityNames() {
+    void getEntityNames() {
         Set<String> names = annotationProvider.getEntityNames();
         assertThat(names).hasSize(2);
         assertThat(names).containsExactly("AnyModel.Service.Products", "AnyModel.Service.Customers");

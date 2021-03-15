@@ -121,7 +121,7 @@ public interface LoggingFacade extends Logger {
             throw new NullPointerException(msg);
         }
         Optional.ofNullable(routingContext.get(CORRELATION_ID)).map(Object::toString)
-                .ifPresent(correlationId -> correlateWith(correlationId));
+                .ifPresent(this::correlateWith);
         return this;
     }
 

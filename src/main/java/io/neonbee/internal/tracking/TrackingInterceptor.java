@@ -3,8 +3,6 @@ package io.neonbee.internal.tracking;
 import static io.neonbee.data.DataVerticle.CONTEXT_HEADER;
 import static io.neonbee.data.internal.DataContextImpl.decodeContextFromString;
 
-import com.google.common.annotations.VisibleForTesting;
-
 import io.neonbee.data.DataContext;
 import io.vertx.core.Handler;
 import io.vertx.core.eventbus.DeliveryContext;
@@ -19,7 +17,6 @@ public class TrackingInterceptor implements Handler<DeliveryContext<Object>> {
 
     private final TrackingDataHandlingStrategy handler;
 
-    @VisibleForTesting
     public TrackingInterceptor(MessageDirection direction, TrackingDataHandlingStrategy handler) {
         this.direction = direction;
         this.handler = handler;

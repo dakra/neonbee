@@ -14,7 +14,7 @@ class BufferDeserializerTest {
 
     @Test
     @DisplayName("deserialization of a stream to buffer.")
-    public void testDeserialization() throws IOException, JSONException {
+    void testDeserialization() throws IOException {
         String json = "{\"type\":\"file\",\"content\":\"body\"}";
         ObjectMapper mapper = new ObjectMapper();
         BufferWrapper wrapper = mapper.readValue(json, BufferWrapper.class);
